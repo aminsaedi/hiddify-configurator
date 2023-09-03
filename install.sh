@@ -13,7 +13,7 @@ add-apt-repository -y ppa:vbernat/haproxy-2.8
 apt -o DPkg::Lock::Timeout=60 install --no-install-recommends -y software-properties-common
 apt -o DPkg::Lock::Timeout=60 update
 apt -o DPkg::Lock::Timeout=60 upgrade -y
-apt -o DPkg::Lock::Timeout=60 install -y curl unzip haproxy
+apt -o DPkg::Lock::Timeout=60 install -y curl unzip haproxy sqlite3
 # pip3 install lastversion "requests<=2.29.0"
 # pip install lastversion "requests<=2.29.0"
 mkdir -p /opt/$GITHUB_REPOSITORY
