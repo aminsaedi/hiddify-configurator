@@ -1,0 +1,1230 @@
+2023-09-04 18:11:30,196 p=1903821 u=amin n=ansible | ERROR! the playbook: playbooks/default.yml could not be found
+2023-09-04 18:11:36,580 p=1904262 u=amin n=ansible | [WARNING]:  * Failed to parse /home/amin/w/hiddyfy-
+terraform/ansible/inventory/main.yml with auto plugin: We were unable to read either
+as JSON nor YAML, these are the errors we got from each: JSON: Expecting value: line
+1 column 1 (char 0)  Syntax Error while loading YAML.   found unacceptable key
+(unhashable type: 'AnsibleMapping')  The error appears to be in
+'/home/amin/w/hiddyfy-terraform/ansible/inventory/main.yml': line 5, column 22, but
+may be elsewhere in the file depending on the exact syntax problem.  The offending
+line appears to be:      droplet:       ansible_host: {{ fqdn }}
+^ here We could be wrong, but this one looks like it might be an issue with missing
+quotes. Always quote template expression brackets when they start a value. For
+instance:      with_items:       - {{ foo }}  Should be written as:      with_items:
+- "{{ foo }}"
+
+2023-09-04 18:11:36,580 p=1904262 u=amin n=ansible | [WARNING]:  * Failed to parse /home/amin/w/hiddyfy-
+terraform/ansible/inventory/main.yml with yaml plugin: We were unable to read either
+as JSON nor YAML, these are the errors we got from each: JSON: Expecting value: line
+1 column 1 (char 0)  Syntax Error while loading YAML.   found unacceptable key
+(unhashable type: 'AnsibleMapping')  The error appears to be in
+'/home/amin/w/hiddyfy-terraform/ansible/inventory/main.yml': line 5, column 22, but
+may be elsewhere in the file depending on the exact syntax problem.  The offending
+line appears to be:      droplet:       ansible_host: {{ fqdn }}
+^ here We could be wrong, but this one looks like it might be an issue with missing
+quotes. Always quote template expression brackets when they start a value. For
+instance:      with_items:       - {{ foo }}  Should be written as:      with_items:
+- "{{ foo }}"
+
+2023-09-04 18:11:36,580 p=1904262 u=amin n=ansible | [WARNING]:  * Failed to parse /home/amin/w/hiddyfy-
+terraform/ansible/inventory/main.yml with ini plugin: Invalid host pattern '---'
+supplied, '---' is normally a sign this is a YAML file.
+
+2023-09-04 18:11:36,580 p=1904262 u=amin n=ansible | [WARNING]: Unable to parse /home/amin/w/hiddyfy-terraform/ansible/inventory/main.yml
+as an inventory source
+
+2023-09-04 18:11:36,580 p=1904262 u=amin n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2023-09-04 18:11:36,582 p=1904262 u=amin n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the
+implicit localhost does not match 'all'
+
+2023-09-04 18:11:36,634 p=1904262 u=amin n=ansible | PLAY [Installing VPN on the droplet] ************************************************
+2023-09-04 18:11:36,634 p=1904262 u=amin n=ansible | skipping: no hosts matched
+2023-09-04 18:11:36,634 p=1904262 u=amin n=ansible | PLAY RECAP **************************************************************************
+2023-09-04 18:13:22,373 p=1910963 u=amin n=ansible | PLAY [Installing VPN on the droplet] ************************************************
+2023-09-04 18:13:22,377 p=1910963 u=amin n=ansible | TASK [Gathering Facts] **************************************************************
+2023-09-04 18:13:22,384 p=1910963 u=amin n=ansible | fatal: [droplet]: FAILED! => {"msg": "The field 'remote_addr' has an invalid value, which includes an undefined variable. The error was: 'fqdn' is undefined. 'fqdn' is undefined. 'fqdn' is undefined. 'fqdn' is undefined"}
+2023-09-04 18:13:22,385 p=1910963 u=amin n=ansible | PLAY RECAP **************************************************************************
+2023-09-04 18:13:22,385 p=1910963 u=amin n=ansible | droplet                    : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-09-04 18:13:43,005 p=1912306 u=amin n=ansible | PLAY [Installing VPN on the droplet] ************************************************
+2023-09-04 18:13:43,008 p=1912306 u=amin n=ansible | TASK [Gathering Facts] **************************************************************
+2023-09-04 18:13:49,916 p=1912306 u=amin n=ansible | ok: [droplet]
+2023-09-04 18:13:49,928 p=1912306 u=amin n=ansible | TASK [vpn : Test task] **************************************************************
+2023-09-04 18:13:52,482 p=1912306 u=amin n=ansible | changed: [droplet]
+2023-09-04 18:13:52,498 p=1912306 u=amin n=ansible | PLAY RECAP **************************************************************************
+2023-09-04 18:13:52,498 p=1912306 u=amin n=ansible | droplet                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-09-04 18:16:39,195 p=1923525 u=amin n=ansible | PLAY [Installing VPN on the droplet] ************************************************
+2023-09-04 18:16:39,200 p=1923525 u=amin n=ansible | TASK [Gathering Facts] **************************************************************
+2023-09-04 18:16:44,889 p=1923525 u=amin n=ansible | ok: [droplet]
+2023-09-04 18:16:44,902 p=1923525 u=amin n=ansible | TASK [vpn : Test task] **************************************************************
+2023-09-04 18:16:47,162 p=1923525 u=amin n=ansible | changed: [droplet]
+2023-09-04 18:16:47,175 p=1923525 u=amin n=ansible | PLAY RECAP **************************************************************************
+2023-09-04 18:16:47,175 p=1923525 u=amin n=ansible | droplet                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-09-04 18:20:56,768 p=1939437 u=amin n=ansible | PLAY [Installing VPN on the droplet] ************************************************
+2023-09-04 18:20:56,772 p=1939437 u=amin n=ansible | TASK [Gathering Facts] **************************************************************
+2023-09-04 18:21:03,012 p=1939437 u=amin n=ansible | ok: [droplet]
+2023-09-04 18:21:03,025 p=1939437 u=amin n=ansible | TASK [vpn : Test task] **************************************************************
+2023-09-04 18:21:03,057 p=1939437 u=amin n=ansible | ok: [droplet] => {
+    "msg": {
+        "all_ipv4_addresses": [
+            "167.172.97.230",
+            "10.19.0.6",
+            "10.114.0.3"
+        ],
+        "all_ipv6_addresses": [
+            "fe80::f4d0:15ff:fec2:9146",
+            "fe80::dc2b:1dff:fe46:50c9"
+        ],
+        "ansible_local": {},
+        "apparmor": {
+            "status": "enabled"
+        },
+        "architecture": "x86_64",
+        "bios_date": "12/12/2017",
+        "bios_vendor": "DigitalOcean",
+        "bios_version": "20171212",
+        "board_asset_tag": "373208707",
+        "board_name": "Droplet",
+        "board_serial": "373208707",
+        "board_vendor": "DigitalOcean",
+        "board_version": "20171212",
+        "chassis_asset_tag": "NA",
+        "chassis_serial": "NA",
+        "chassis_vendor": "QEMU",
+        "chassis_version": "pc-i440fx-6.1",
+        "cmdline": {
+            "BOOT_IMAGE": "/boot/vmlinuz-5.4.0-122-generic",
+            "biosdevname": "0",
+            "console": "ttyS0",
+            "net.ifnames": "0",
+            "ro": true,
+            "root": "UUID=74dd579c-a377-487d-b8f7-bc7c6df13ba1"
+        },
+        "date_time": {
+            "date": "2023-09-04",
+            "day": "04",
+            "epoch": "1693866062",
+            "epoch_int": "1693866062",
+            "hour": "22",
+            "iso8601": "2023-09-04T22:21:02Z",
+            "iso8601_basic": "20230904T222102066228",
+            "iso8601_basic_short": "20230904T222102",
+            "iso8601_micro": "2023-09-04T22:21:02.066228Z",
+            "minute": "21",
+            "month": "09",
+            "second": "02",
+            "time": "22:21:02",
+            "tz": "UTC",
+            "tz_dst": "UTC",
+            "tz_offset": "+0000",
+            "weekday": "Monday",
+            "weekday_number": "1",
+            "weeknumber": "36",
+            "year": "2023"
+        },
+        "default_ipv4": {
+            "address": "167.172.97.230",
+            "alias": "eth0",
+            "broadcast": "167.172.111.255",
+            "gateway": "167.172.96.1",
+            "interface": "eth0",
+            "macaddress": "f6:d0:15:c2:91:46",
+            "mtu": 1500,
+            "netmask": "255.255.240.0",
+            "network": "167.172.96.0",
+            "prefix": "20",
+            "type": "ether"
+        },
+        "default_ipv6": {},
+        "device_links": {
+            "ids": {},
+            "labels": {
+                "vda1": [
+                    "cloudimg-rootfs"
+                ],
+                "vda15": [
+                    "UEFI"
+                ],
+                "vdb": [
+                    "config-2"
+                ]
+            },
+            "masters": {},
+            "uuids": {
+                "vda1": [
+                    "74dd579c-a377-487d-b8f7-bc7c6df13ba1"
+                ],
+                "vda15": [
+                    "922E-54A6"
+                ],
+                "vdb": [
+                    "2023-09-04-21-52-53-00"
+                ]
+            }
+        },
+        "devices": {
+            "loop0": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "126824",
+                "sectorsize": "512",
+                "size": "61.93 MB",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop1": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "138880",
+                "sectorsize": "512",
+                "size": "67.81 MB",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop2": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "96176",
+                "sectorsize": "512",
+                "size": "46.96 MB",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop3": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "0",
+                "sectorsize": "512",
+                "size": "0.00 Bytes",
+                "support_discard": "4096",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop4": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "0",
+                "sectorsize": "512",
+                "size": "0.00 Bytes",
+                "support_discard": "0",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop5": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "0",
+                "sectorsize": "512",
+                "size": "0.00 Bytes",
+                "support_discard": "0",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop6": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "0",
+                "sectorsize": "512",
+                "size": "0.00 Bytes",
+                "support_discard": "0",
+                "vendor": null,
+                "virtual": 1
+            },
+            "loop7": {
+                "holders": [],
+                "host": "",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "0",
+                "sectorsize": "512",
+                "size": "0.00 Bytes",
+                "support_discard": "0",
+                "vendor": null,
+                "virtual": 1
+            },
+            "vda": {
+                "holders": [],
+                "host": "SCSI storage controller: Red Hat, Inc. Virtio block device",
+                "links": {
+                    "ids": [],
+                    "labels": [],
+                    "masters": [],
+                    "uuids": []
+                },
+                "model": null,
+                "partitions": {
+                    "vda1": {
+                        "holders": [],
+                        "links": {
+                            "ids": [],
+                            "labels": [
+                                "cloudimg-rootfs"
+                            ],
+                            "masters": [],
+                            "uuids": [
+                                "74dd579c-a377-487d-b8f7-bc7c6df13ba1"
+                            ]
+                        },
+                        "sectors": "20744159",
+                        "sectorsize": 512,
+                        "size": "9.89 GB",
+                        "start": "227328",
+                        "uuid": "74dd579c-a377-487d-b8f7-bc7c6df13ba1"
+                    },
+                    "vda14": {
+                        "holders": [],
+                        "links": {
+                            "ids": [],
+                            "labels": [],
+                            "masters": [],
+                            "uuids": []
+                        },
+                        "sectors": "8192",
+                        "sectorsize": 512,
+                        "size": "4.00 MB",
+                        "start": "2048",
+                        "uuid": null
+                    },
+                    "vda15": {
+                        "holders": [],
+                        "links": {
+                            "ids": [],
+                            "labels": [
+                                "UEFI"
+                            ],
+                            "masters": [],
+                            "uuids": [
+                                "922E-54A6"
+                            ]
+                        },
+                        "sectors": "217088",
+                        "sectorsize": 512,
+                        "size": "106.00 MB",
+                        "start": "10240",
+                        "uuid": "922E-54A6"
+                    }
+                },
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "20971520",
+                "sectorsize": "512",
+                "size": "10.00 GB",
+                "support_discard": "512",
+                "vendor": "0x1af4",
+                "virtual": 1
+            },
+            "vdb": {
+                "holders": [],
+                "host": "SCSI storage controller: Red Hat, Inc. Virtio block device",
+                "links": {
+                    "ids": [],
+                    "labels": [
+                        "config-2"
+                    ],
+                    "masters": [],
+                    "uuids": [
+                        "2023-09-04-21-52-53-00"
+                    ]
+                },
+                "model": null,
+                "partitions": {},
+                "removable": "0",
+                "rotational": "1",
+                "sas_address": null,
+                "sas_device_handle": null,
+                "scheduler_mode": "mq-deadline",
+                "sectors": "932",
+                "sectorsize": "512",
+                "size": "466.00 KB",
+                "support_discard": "512",
+                "vendor": "0x1af4",
+                "virtual": 1
+            }
+        },
+        "discovered_interpreter_python": "/usr/bin/python3",
+        "distribution": "Ubuntu",
+        "distribution_file_parsed": true,
+        "distribution_file_path": "/etc/os-release",
+        "distribution_file_variety": "Debian",
+        "distribution_major_version": "20",
+        "distribution_release": "focal",
+        "distribution_version": "20.04",
+        "dns": {
+            "nameservers": [
+                "127.0.0.53"
+            ],
+            "options": {
+                "edns0": true,
+                "trust-ad": true
+            }
+        },
+        "domain": "",
+        "effective_group_id": 0,
+        "effective_user_id": 0,
+        "env": {
+            "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+            "HOME": "/root",
+            "LANG": "C.UTF-8",
+            "LOGNAME": "root",
+            "MOTD_SHOWN": "pam",
+            "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+            "PWD": "/root",
+            "SHELL": "/bin/bash",
+            "SHLVL": "0",
+            "SSH_CLIENT": "70.28.93.250 55530 22",
+            "SSH_CONNECTION": "70.28.93.250 55530 167.172.97.230 22",
+            "SSH_TTY": "/dev/pts/0",
+            "TERM": "xterm-256color",
+            "USER": "root",
+            "XDG_RUNTIME_DIR": "/run/user/0",
+            "XDG_SESSION_CLASS": "user",
+            "XDG_SESSION_ID": "6",
+            "XDG_SESSION_TYPE": "tty",
+            "_": "/bin/sh"
+        },
+        "eth0": {
+            "active": true,
+            "device": "eth0",
+            "features": {
+                "esp_hw_offload": "off [fixed]",
+                "esp_tx_csum_hw_offload": "off [fixed]",
+                "fcoe_mtu": "off [fixed]",
+                "generic_receive_offload": "on",
+                "generic_segmentation_offload": "on",
+                "highdma": "on [fixed]",
+                "hw_tc_offload": "off [fixed]",
+                "l2_fwd_offload": "off [fixed]",
+                "large_receive_offload": "off [fixed]",
+                "loopback": "off [fixed]",
+                "netns_local": "off [fixed]",
+                "ntuple_filters": "off [fixed]",
+                "receive_hashing": "off [fixed]",
+                "rx_all": "off [fixed]",
+                "rx_checksumming": "on [fixed]",
+                "rx_fcs": "off [fixed]",
+                "rx_gro_hw": "on",
+                "rx_udp_tunnel_port_offload": "off [fixed]",
+                "rx_vlan_filter": "on [fixed]",
+                "rx_vlan_offload": "off [fixed]",
+                "rx_vlan_stag_filter": "off [fixed]",
+                "rx_vlan_stag_hw_parse": "off [fixed]",
+                "scatter_gather": "on",
+                "tcp_segmentation_offload": "on",
+                "tls_hw_record": "off [fixed]",
+                "tls_hw_rx_offload": "off [fixed]",
+                "tls_hw_tx_offload": "off [fixed]",
+                "tx_checksum_fcoe_crc": "off [fixed]",
+                "tx_checksum_ip_generic": "on",
+                "tx_checksum_ipv4": "off [fixed]",
+                "tx_checksum_ipv6": "off [fixed]",
+                "tx_checksum_sctp": "off [fixed]",
+                "tx_checksumming": "on",
+                "tx_esp_segmentation": "off [fixed]",
+                "tx_fcoe_segmentation": "off [fixed]",
+                "tx_gre_csum_segmentation": "off [fixed]",
+                "tx_gre_segmentation": "off [fixed]",
+                "tx_gso_partial": "off [fixed]",
+                "tx_gso_robust": "on [fixed]",
+                "tx_ipxip4_segmentation": "off [fixed]",
+                "tx_ipxip6_segmentation": "off [fixed]",
+                "tx_lockless": "off [fixed]",
+                "tx_nocache_copy": "off",
+                "tx_scatter_gather": "on",
+                "tx_scatter_gather_fraglist": "off [fixed]",
+                "tx_sctp_segmentation": "off [fixed]",
+                "tx_tcp6_segmentation": "on",
+                "tx_tcp_ecn_segmentation": "on",
+                "tx_tcp_mangleid_segmentation": "off",
+                "tx_tcp_segmentation": "on",
+                "tx_udp_segmentation": "off [fixed]",
+                "tx_udp_tnl_csum_segmentation": "off [fixed]",
+                "tx_udp_tnl_segmentation": "off [fixed]",
+                "tx_vlan_offload": "off [fixed]",
+                "tx_vlan_stag_hw_insert": "off [fixed]",
+                "vlan_challenged": "off [fixed]"
+            },
+            "hw_timestamp_filters": [],
+            "ipv4": {
+                "address": "167.172.97.230",
+                "broadcast": "167.172.111.255",
+                "netmask": "255.255.240.0",
+                "network": "167.172.96.0",
+                "prefix": "20"
+            },
+            "ipv4_secondaries": [
+                {
+                    "address": "10.19.0.6",
+                    "broadcast": "10.19.255.255",
+                    "netmask": "255.255.0.0",
+                    "network": "10.19.0.0",
+                    "prefix": "16"
+                }
+            ],
+            "ipv6": [
+                {
+                    "address": "fe80::f4d0:15ff:fec2:9146",
+                    "prefix": "64",
+                    "scope": "link"
+                }
+            ],
+            "macaddress": "f6:d0:15:c2:91:46",
+            "module": "virtio_net",
+            "mtu": 1500,
+            "pciid": "virtio1",
+            "promisc": false,
+            "speed": -1,
+            "timestamping": [
+                "tx_software",
+                "rx_software",
+                "software"
+            ],
+            "type": "ether"
+        },
+        "eth1": {
+            "active": true,
+            "device": "eth1",
+            "features": {
+                "esp_hw_offload": "off [fixed]",
+                "esp_tx_csum_hw_offload": "off [fixed]",
+                "fcoe_mtu": "off [fixed]",
+                "generic_receive_offload": "on",
+                "generic_segmentation_offload": "on",
+                "highdma": "on [fixed]",
+                "hw_tc_offload": "off [fixed]",
+                "l2_fwd_offload": "off [fixed]",
+                "large_receive_offload": "off [fixed]",
+                "loopback": "off [fixed]",
+                "netns_local": "off [fixed]",
+                "ntuple_filters": "off [fixed]",
+                "receive_hashing": "off [fixed]",
+                "rx_all": "off [fixed]",
+                "rx_checksumming": "on [fixed]",
+                "rx_fcs": "off [fixed]",
+                "rx_gro_hw": "on",
+                "rx_udp_tunnel_port_offload": "off [fixed]",
+                "rx_vlan_filter": "on [fixed]",
+                "rx_vlan_offload": "off [fixed]",
+                "rx_vlan_stag_filter": "off [fixed]",
+                "rx_vlan_stag_hw_parse": "off [fixed]",
+                "scatter_gather": "on",
+                "tcp_segmentation_offload": "on",
+                "tls_hw_record": "off [fixed]",
+                "tls_hw_rx_offload": "off [fixed]",
+                "tls_hw_tx_offload": "off [fixed]",
+                "tx_checksum_fcoe_crc": "off [fixed]",
+                "tx_checksum_ip_generic": "on",
+                "tx_checksum_ipv4": "off [fixed]",
+                "tx_checksum_ipv6": "off [fixed]",
+                "tx_checksum_sctp": "off [fixed]",
+                "tx_checksumming": "on",
+                "tx_esp_segmentation": "off [fixed]",
+                "tx_fcoe_segmentation": "off [fixed]",
+                "tx_gre_csum_segmentation": "off [fixed]",
+                "tx_gre_segmentation": "off [fixed]",
+                "tx_gso_partial": "off [fixed]",
+                "tx_gso_robust": "on [fixed]",
+                "tx_ipxip4_segmentation": "off [fixed]",
+                "tx_ipxip6_segmentation": "off [fixed]",
+                "tx_lockless": "off [fixed]",
+                "tx_nocache_copy": "off",
+                "tx_scatter_gather": "on",
+                "tx_scatter_gather_fraglist": "off [fixed]",
+                "tx_sctp_segmentation": "off [fixed]",
+                "tx_tcp6_segmentation": "on",
+                "tx_tcp_ecn_segmentation": "on",
+                "tx_tcp_mangleid_segmentation": "off",
+                "tx_tcp_segmentation": "on",
+                "tx_udp_segmentation": "off [fixed]",
+                "tx_udp_tnl_csum_segmentation": "off [fixed]",
+                "tx_udp_tnl_segmentation": "off [fixed]",
+                "tx_vlan_offload": "off [fixed]",
+                "tx_vlan_stag_hw_insert": "off [fixed]",
+                "vlan_challenged": "off [fixed]"
+            },
+            "hw_timestamp_filters": [],
+            "ipv4": {
+                "address": "10.114.0.3",
+                "broadcast": "10.114.15.255",
+                "netmask": "255.255.240.0",
+                "network": "10.114.0.0",
+                "prefix": "20"
+            },
+            "ipv6": [
+                {
+                    "address": "fe80::dc2b:1dff:fe46:50c9",
+                    "prefix": "64",
+                    "scope": "link"
+                }
+            ],
+            "macaddress": "de:2b:1d:46:50:c9",
+            "module": "virtio_net",
+            "mtu": 1500,
+            "pciid": "virtio2",
+            "promisc": false,
+            "speed": -1,
+            "timestamping": [
+                "tx_software",
+                "rx_software",
+                "software"
+            ],
+            "type": "ether"
+        },
+        "fibre_channel_wwn": [],
+        "fips": false,
+        "form_factor": "Other",
+        "fqdn": "hiddify-machine",
+        "gather_subset": [
+            "all"
+        ],
+        "hostname": "hiddify-machine",
+        "hostnqn": "",
+        "interfaces": [
+            "eth0",
+            "eth1",
+            "lo"
+        ],
+        "is_chroot": false,
+        "iscsi_iqn": "",
+        "kernel": "5.4.0-122-generic",
+        "kernel_version": "#138-Ubuntu SMP Wed Jun 22 15:00:31 UTC 2022",
+        "lo": {
+            "active": true,
+            "device": "lo",
+            "features": {
+                "esp_hw_offload": "off [fixed]",
+                "esp_tx_csum_hw_offload": "off [fixed]",
+                "fcoe_mtu": "off [fixed]",
+                "generic_receive_offload": "on",
+                "generic_segmentation_offload": "on",
+                "highdma": "on [fixed]",
+                "hw_tc_offload": "off [fixed]",
+                "l2_fwd_offload": "off [fixed]",
+                "large_receive_offload": "off [fixed]",
+                "loopback": "on [fixed]",
+                "netns_local": "on [fixed]",
+                "ntuple_filters": "off [fixed]",
+                "receive_hashing": "off [fixed]",
+                "rx_all": "off [fixed]",
+                "rx_checksumming": "on [fixed]",
+                "rx_fcs": "off [fixed]",
+                "rx_gro_hw": "off [fixed]",
+                "rx_udp_tunnel_port_offload": "off [fixed]",
+                "rx_vlan_filter": "off [fixed]",
+                "rx_vlan_offload": "off [fixed]",
+                "rx_vlan_stag_filter": "off [fixed]",
+                "rx_vlan_stag_hw_parse": "off [fixed]",
+                "scatter_gather": "on",
+                "tcp_segmentation_offload": "on",
+                "tls_hw_record": "off [fixed]",
+                "tls_hw_rx_offload": "off [fixed]",
+                "tls_hw_tx_offload": "off [fixed]",
+                "tx_checksum_fcoe_crc": "off [fixed]",
+                "tx_checksum_ip_generic": "on [fixed]",
+                "tx_checksum_ipv4": "off [fixed]",
+                "tx_checksum_ipv6": "off [fixed]",
+                "tx_checksum_sctp": "on [fixed]",
+                "tx_checksumming": "on",
+                "tx_esp_segmentation": "off [fixed]",
+                "tx_fcoe_segmentation": "off [fixed]",
+                "tx_gre_csum_segmentation": "off [fixed]",
+                "tx_gre_segmentation": "off [fixed]",
+                "tx_gso_partial": "off [fixed]",
+                "tx_gso_robust": "off [fixed]",
+                "tx_ipxip4_segmentation": "off [fixed]",
+                "tx_ipxip6_segmentation": "off [fixed]",
+                "tx_lockless": "on [fixed]",
+                "tx_nocache_copy": "off [fixed]",
+                "tx_scatter_gather": "on [fixed]",
+                "tx_scatter_gather_fraglist": "on [fixed]",
+                "tx_sctp_segmentation": "on",
+                "tx_tcp6_segmentation": "on",
+                "tx_tcp_ecn_segmentation": "on",
+                "tx_tcp_mangleid_segmentation": "on",
+                "tx_tcp_segmentation": "on",
+                "tx_udp_segmentation": "off [fixed]",
+                "tx_udp_tnl_csum_segmentation": "off [fixed]",
+                "tx_udp_tnl_segmentation": "off [fixed]",
+                "tx_vlan_offload": "off [fixed]",
+                "tx_vlan_stag_hw_insert": "off [fixed]",
+                "vlan_challenged": "on [fixed]"
+            },
+            "hw_timestamp_filters": [],
+            "ipv4": {
+                "address": "127.0.0.1",
+                "broadcast": "",
+                "netmask": "255.0.0.0",
+                "network": "127.0.0.0",
+                "prefix": "8"
+            },
+            "ipv6": [
+                {
+                    "address": "::1",
+                    "prefix": "128",
+                    "scope": "host"
+                }
+            ],
+            "mtu": 65536,
+            "promisc": false,
+            "timestamping": [
+                "tx_software",
+                "rx_software",
+                "software"
+            ],
+            "type": "loopback"
+        },
+        "loadavg": {
+            "15m": 0.04,
+            "1m": 0.01,
+            "5m": 0.08
+        },
+        "lsb": {
+            "codename": "focal",
+            "description": "Ubuntu 20.04.4 LTS",
+            "id": "Ubuntu",
+            "major_release": "20",
+            "release": "20.04"
+        },
+        "lvm": {
+            "lvs": {},
+            "pvs": {},
+            "vgs": {}
+        },
+        "machine": "x86_64",
+        "machine_id": "9e82b44afdeb27377d93bf8b64f651eb",
+        "memfree_mb": 36,
+        "memory_mb": {
+            "nocache": {
+                "free": 271,
+                "used": 202
+            },
+            "real": {
+                "free": 36,
+                "total": 473,
+                "used": 437
+            },
+            "swap": {
+                "cached": 0,
+                "free": 0,
+                "total": 0,
+                "used": 0
+            }
+        },
+        "memtotal_mb": 473,
+        "module_setup": true,
+        "mounts": [
+            {
+                "block_available": 2094356,
+                "block_size": 4096,
+                "block_total": 2493522,
+                "block_used": 399166,
+                "device": "/dev/vda1",
+                "fstype": "ext4",
+                "inode_available": 1217208,
+                "inode_total": 1290240,
+                "inode_used": 73032,
+                "mount": "/",
+                "options": "rw,relatime",
+                "size_available": 8578482176,
+                "size_total": 10213466112,
+                "uuid": "74dd579c-a377-487d-b8f7-bc7c6df13ba1"
+            },
+            {
+                "block_available": 0,
+                "block_size": 131072,
+                "block_total": 496,
+                "block_used": 496,
+                "device": "/dev/loop0",
+                "fstype": "squashfs",
+                "inode_available": 0,
+                "inode_total": 11789,
+                "inode_used": 11789,
+                "mount": "/snap/core20/1518",
+                "options": "ro,nodev,relatime",
+                "size_available": 0,
+                "size_total": 65011712,
+                "uuid": "N/A"
+            },
+            {
+                "block_available": 0,
+                "block_size": 131072,
+                "block_total": 543,
+                "block_used": 543,
+                "device": "/dev/loop1",
+                "fstype": "squashfs",
+                "inode_available": 0,
+                "inode_total": 802,
+                "inode_used": 802,
+                "mount": "/snap/lxd/22753",
+                "options": "ro,nodev,relatime",
+                "size_available": 0,
+                "size_total": 71172096,
+                "uuid": "N/A"
+            },
+            {
+                "block_available": 0,
+                "block_size": 131072,
+                "block_total": 376,
+                "block_used": 376,
+                "device": "/dev/loop2",
+                "fstype": "squashfs",
+                "inode_available": 0,
+                "inode_total": 486,
+                "inode_used": 486,
+                "mount": "/snap/snapd/16292",
+                "options": "ro,nodev,relatime",
+                "size_available": 0,
+                "size_total": 49283072,
+                "uuid": "N/A"
+            },
+            {
+                "block_available": 203074,
+                "block_size": 512,
+                "block_total": 213716,
+                "block_used": 10642,
+                "device": "/dev/vda15",
+                "fstype": "vfat",
+                "inode_available": 0,
+                "inode_total": 0,
+                "inode_used": 0,
+                "mount": "/boot/efi",
+                "options": "rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro",
+                "size_available": 103973888,
+                "size_total": 109422592,
+                "uuid": "922E-54A6"
+            }
+        ],
+        "nodename": "hiddify-machine",
+        "os_family": "Debian",
+        "pkg_mgr": "apt",
+        "proc_cmdline": {
+            "BOOT_IMAGE": "/boot/vmlinuz-5.4.0-122-generic",
+            "biosdevname": "0",
+            "console": [
+                "tty1",
+                "ttyS0"
+            ],
+            "net.ifnames": "0",
+            "ro": true,
+            "root": "UUID=74dd579c-a377-487d-b8f7-bc7c6df13ba1"
+        },
+        "processor": [
+            "0",
+            "GenuineIntel",
+            "DO-Regular"
+        ],
+        "processor_cores": 1,
+        "processor_count": 1,
+        "processor_nproc": 1,
+        "processor_threads_per_core": 1,
+        "processor_vcpus": 1,
+        "product_name": "Droplet",
+        "product_serial": "373208707",
+        "product_uuid": "6219086b-701a-410a-8620-a7e1ebe79660",
+        "product_version": "20171212",
+        "python": {
+            "executable": "/usr/bin/python3",
+            "has_sslcontext": true,
+            "type": "cpython",
+            "version": {
+                "major": 3,
+                "micro": 10,
+                "minor": 8,
+                "releaselevel": "final",
+                "serial": 0
+            },
+            "version_info": [
+                3,
+                8,
+                10,
+                "final",
+                0
+            ]
+        },
+        "python_version": "3.8.10",
+        "real_group_id": 0,
+        "real_user_id": 0,
+        "selinux": {
+            "status": "disabled"
+        },
+        "selinux_python_present": true,
+        "service_mgr": "systemd",
+        "ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBAOlEADLSWneeckbYdNuSvmH9HNx2mfrIh0JIFFNQ5z9wToHoyELGTrXjQM0CDL6CowOoEnyoCNHNft25pfzwPHb3X9yxOmzFRb+bIBs+OYg2ggoTLMS51795dbA0VOLoELeBvAmMkQBGfGwm54vWsh88TiECi02JjkKmxHZcVN5vAAAAFQD/B0a2Pdy2IHl2j4V0yfgFsd3JUwAAAIEAqqg5UDz3FVjqVIQTsiZMCVKuoqSoI45iqNMtwlI2Jbk6v2+1w7f+fRKq8gqVvTNyM5lQ/dhmnbyXzh2BUZozkzzFULJ1He6kShTBxhRsbtAP3WrLz76nKAbdms+p4ixwJ8pn1yyukjp+HMDUqyY/PBCIxtz4lcqmIARWHJpk/EAAAACBAMYFNzOM3DReKbtq2UMd7QgSe7Bj768VS7AuUql1LRgKy3xkzPdfi2Wp3AhiJ7Xr8yNQ4RDAq61AXVKvnyTC3N4B03XR2uT4enU4mz/VDIvEgwUAKdPoyehXfwq1eBgNrttqD8aNIuDHtBbEqikd2lQRpahF4HyWAu90TLF5bEMa",
+        "ssh_host_key_dsa_public_keytype": "ssh-dss",
+        "ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBgw/u3pFSEwMN05XWfbLHyUj5CVtpUjxW0hC9HJvzEOyKeg3ikQBwNp5CfXyRhrw7DNaozGxp/lGOd3ffeMGG0=",
+        "ssh_host_key_ecdsa_public_keytype": "ecdsa-sha2-nistp256",
+        "ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIGg9GRZUtmtQ61H3KvfUGWr9Ttm8k+jdN+f97Vew2J/P",
+        "ssh_host_key_ed25519_public_keytype": "ssh-ed25519",
+        "ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABgQDtwKf/k71gRBd8jQATmR45OIkXWHyPCJV/nFBp/FXCWOcTg8JlQj2qDhunpbcmv16BN0LOF3g9EhnwEImjvzwNCrrEq6gbcbJ1s1qH5it/BZz/l35GQGHmoy644dZpv0QdLmb5y/mgvXan849oMudHQ5lC8D4WNpsvhF+5bD5mA+bqBLzFdadM6flY6cjxlpU7/MCUoyyf5o4H4+sRCc5BcbXL3ScvhR8DB6SM7uM8bTjeilDXYSxh7rSs4AHcMp/MB9LQ5trm/upJM5vS4faPuSkOghKk1RhvNviwEhBQXZs/UOclqxAj2Z1hTsMdGKBq+khVnbuWBUNCQXMUDwPzIrVDVq58aofXfAic5mFgUZFbUfEOOEPZ51A1IbsGvkgwZtoLjjPWbC062ygGIM0+lwVJ4QJ7CfLH/0z4PqSlR+cGLCh6o59xGUvudVDkzJZwaEnSAWAyUhV2fnz72moSsYR8OLl+dGa6hnszop/1pDutKrsj/g8qE4WjTpZwtvU=",
+        "ssh_host_key_rsa_public_keytype": "ssh-rsa",
+        "swapfree_mb": 0,
+        "swaptotal_mb": 0,
+        "system": "Linux",
+        "system_capabilities": [],
+        "system_capabilities_enforced": "False",
+        "system_vendor": "DigitalOcean",
+        "uptime_seconds": 1683,
+        "user_dir": "/root",
+        "user_gecos": "root",
+        "user_gid": 0,
+        "user_id": "root",
+        "user_shell": "/bin/bash",
+        "user_uid": 0,
+        "userspace_architecture": "x86_64",
+        "userspace_bits": "64",
+        "virtualization_role": "guest",
+        "virtualization_tech_guest": [
+            "kvm"
+        ],
+        "virtualization_tech_host": [
+            "kvm"
+        ],
+        "virtualization_type": "kvm"
+    }
+}
+2023-09-04 18:21:03,076 p=1939437 u=amin n=ansible | PLAY RECAP **************************************************************************
+2023-09-04 18:21:03,076 p=1939437 u=amin n=ansible | droplet                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-09-04 18:36:00,715 p=1995173 u=amin n=ansible | PLAY [Installing VPN on the droplet] ************************************************
+2023-09-04 18:36:00,719 p=1995173 u=amin n=ansible | TASK [Gathering Facts] **************************************************************
+2023-09-04 18:36:06,470 p=1995173 u=amin n=ansible | ok: [droplet]
+2023-09-04 18:36:06,479 p=1995173 u=amin n=ansible | TASK [vpn : Add haproxy repository] *************************************************
+2023-09-04 18:36:26,641 p=1995173 u=amin n=ansible | changed: [droplet]
+2023-09-04 18:36:26,645 p=1995173 u=amin n=ansible | TASK [vpn : Install required packages] **********************************************
+2023-09-04 18:37:30,249 p=1995173 u=amin n=ansible | changed: [droplet] => (item=haproxy)
+2023-09-04 18:37:33,850 p=1995173 u=amin n=ansible | ok: [droplet] => (item=software-properties-common)
+2023-09-04 18:37:37,271 p=1995173 u=amin n=ansible | ok: [droplet] => (item=curl)
+2023-09-04 18:37:51,622 p=1995173 u=amin n=ansible | changed: [droplet] => (item=unzip)
+2023-09-04 18:38:06,770 p=1995173 u=amin n=ansible | changed: [droplet] => (item=sqlite3)
+2023-09-04 18:38:26,597 p=1995173 u=amin n=ansible | changed: [droplet] => (item=fail2ban)
+2023-09-04 18:38:26,616 p=1995173 u=amin n=ansible | PLAY RECAP **************************************************************************
+2023-09-04 18:38:26,616 p=1995173 u=amin n=ansible | droplet                    : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-09-04 18:45:18,744 p=2029388 u=amin n=ansible | PLAY [Installing VPN on the droplet] ************************************************
+2023-09-04 18:45:18,749 p=2029388 u=amin n=ansible | TASK [Gathering Facts] **************************************************************
+2023-09-04 18:45:24,978 p=2029388 u=amin n=ansible | ok: [droplet]
+2023-09-04 18:45:24,990 p=2029388 u=amin n=ansible | TASK [vpn : Add haproxy repository] *************************************************
+2023-09-04 18:45:27,618 p=2029388 u=amin n=ansible | ok: [droplet]
+2023-09-04 18:45:27,621 p=2029388 u=amin n=ansible | TASK [vpn : Install required packages] **********************************************
+2023-09-04 18:45:31,030 p=2029388 u=amin n=ansible | ok: [droplet] => (item=haproxy)
+2023-09-04 18:45:34,353 p=2029388 u=amin n=ansible | ok: [droplet] => (item=software-properties-common)
+2023-09-04 18:45:37,557 p=2029388 u=amin n=ansible | ok: [droplet] => (item=curl)
+2023-09-04 18:45:40,776 p=2029388 u=amin n=ansible | ok: [droplet] => (item=unzip)
+2023-09-04 18:45:44,261 p=2029388 u=amin n=ansible | ok: [droplet] => (item=sqlite3)
+2023-09-04 18:45:47,616 p=2029388 u=amin n=ansible | ok: [droplet] => (item=fail2ban)
+2023-09-04 18:45:47,637 p=2029388 u=amin n=ansible | PLAY RECAP **************************************************************************
+2023-09-04 18:45:47,637 p=2029388 u=amin n=ansible | droplet                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-09-04 18:50:28,573 p=2048422 u=amin n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/home/amin/w/hiddyfy-terraform/ansible/roles/vpn/tasks/main.yml': line 15, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+  - name: Download hiddify
+  ^ here
+
+2023-09-04 18:50:52,421 p=2050054 u=amin n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to be in '/home/amin/w/hiddyfy-terraform/ansible/roles/vpn/tasks/main.yml': line 15, column 2, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+ - name: Download hiddify
+ ^ here
+
+2023-09-04 18:51:40,487 p=2053198 u=amin n=ansible | PLAY [Installing VPN on the droplet] ************************************************
+2023-09-04 18:51:40,491 p=2053198 u=amin n=ansible | TASK [Gathering Facts] **************************************************************
+2023-09-04 18:51:46,144 p=2053198 u=amin n=ansible | ok: [droplet]
+2023-09-04 18:51:46,155 p=2053198 u=amin n=ansible | TASK [vpn : Add haproxy repository] *************************************************
+2023-09-04 18:51:48,654 p=2053198 u=amin n=ansible | ok: [droplet]
+2023-09-04 18:51:48,659 p=2053198 u=amin n=ansible | TASK [vpn : Install required packages] **********************************************
+2023-09-04 18:51:52,089 p=2053198 u=amin n=ansible | ok: [droplet] => (item=haproxy)
+2023-09-04 18:51:55,351 p=2053198 u=amin n=ansible | ok: [droplet] => (item=software-properties-common)
+2023-09-04 18:51:58,619 p=2053198 u=amin n=ansible | ok: [droplet] => (item=curl)
+2023-09-04 18:52:02,335 p=2053198 u=amin n=ansible | ok: [droplet] => (item=unzip)
+2023-09-04 18:52:05,760 p=2053198 u=amin n=ansible | ok: [droplet] => (item=sqlite3)
+2023-09-04 18:52:09,063 p=2053198 u=amin n=ansible | ok: [droplet] => (item=fail2ban)
+2023-09-04 18:52:09,068 p=2053198 u=amin n=ansible | TASK [vpn : Download hiddify] *******************************************************
+2023-09-04 18:52:11,941 p=2053198 u=amin n=ansible | changed: [droplet]
+2023-09-04 18:52:11,945 p=2053198 u=amin n=ansible | TASK [vpn : Unzip hiddify] **********************************************************
+2023-09-04 18:52:14,119 p=2053198 u=amin n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: NoneType: None
+2023-09-04 18:52:14,119 p=2053198 u=amin n=ansible | fatal: [droplet]: FAILED! => {"changed": false, "msg": "dest '/var/hiddify-config' must be an existing dir"}
+2023-09-04 18:52:14,120 p=2053198 u=amin n=ansible | PLAY RECAP **************************************************************************
+2023-09-04 18:52:14,120 p=2053198 u=amin n=ansible | droplet                    : ok=4    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-09-04 18:53:03,747 p=2058439 u=amin n=ansible | PLAY [Installing VPN on the droplet] ************************************************
+2023-09-04 18:53:03,751 p=2058439 u=amin n=ansible | TASK [Gathering Facts] **************************************************************
+2023-09-04 18:53:07,583 p=2058439 u=amin n=ansible | ok: [droplet]
+2023-09-04 18:53:07,595 p=2058439 u=amin n=ansible | TASK [vpn : Add haproxy repository] *************************************************
+2023-09-04 18:53:10,103 p=2058439 u=amin n=ansible | ok: [droplet]
+2023-09-04 18:53:10,107 p=2058439 u=amin n=ansible | TASK [vpn : Install required packages] **********************************************
+2023-09-04 18:53:13,394 p=2058439 u=amin n=ansible | ok: [droplet] => (item=haproxy)
+2023-09-04 18:53:16,720 p=2058439 u=amin n=ansible | ok: [droplet] => (item=software-properties-common)
+2023-09-04 18:53:20,191 p=2058439 u=amin n=ansible | ok: [droplet] => (item=curl)
+2023-09-04 18:53:23,562 p=2058439 u=amin n=ansible | ok: [droplet] => (item=unzip)
+2023-09-04 18:53:26,884 p=2058439 u=amin n=ansible | ok: [droplet] => (item=sqlite3)
+2023-09-04 18:53:30,163 p=2058439 u=amin n=ansible | ok: [droplet] => (item=fail2ban)
+2023-09-04 18:53:30,167 p=2058439 u=amin n=ansible | TASK [vpn : Download hiddify] *******************************************************
+2023-09-04 18:53:33,249 p=2058439 u=amin n=ansible | ok: [droplet]
+2023-09-04 18:53:33,254 p=2058439 u=amin n=ansible | TASK [vpn : Create hiddify-config directory] ****************************************
+2023-09-04 18:53:35,565 p=2058439 u=amin n=ansible | changed: [droplet]
+2023-09-04 18:53:35,570 p=2058439 u=amin n=ansible | TASK [vpn : Unzip hiddify] **********************************************************
+2023-09-04 18:53:37,764 p=2058439 u=amin n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: NoneType: None
+2023-09-04 18:53:37,764 p=2058439 u=amin n=ansible | fatal: [droplet]: FAILED! => {"changed": false, "msg": "dest '/var/hiddify-config' must be an existing dir"}
+2023-09-04 18:53:37,765 p=2058439 u=amin n=ansible | PLAY RECAP **************************************************************************
+2023-09-04 18:53:37,765 p=2058439 u=amin n=ansible | droplet                    : ok=5    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-09-04 18:53:56,959 p=2061912 u=amin n=ansible | PLAY [Installing VPN on the droplet] ************************************************
+2023-09-04 18:53:56,965 p=2061912 u=amin n=ansible | TASK [Gathering Facts] **************************************************************
+2023-09-04 18:54:00,894 p=2061912 u=amin n=ansible | ok: [droplet]
+2023-09-04 18:54:00,907 p=2061912 u=amin n=ansible | TASK [vpn : Add haproxy repository] *************************************************
+2023-09-04 18:54:03,573 p=2061912 u=amin n=ansible | ok: [droplet]
+2023-09-04 18:54:03,578 p=2061912 u=amin n=ansible | TASK [vpn : Install required packages] **********************************************
+2023-09-04 18:54:06,857 p=2061912 u=amin n=ansible | ok: [droplet] => (item=haproxy)
+2023-09-04 18:54:10,233 p=2061912 u=amin n=ansible | ok: [droplet] => (item=software-properties-common)
+2023-09-04 18:54:13,768 p=2061912 u=amin n=ansible | ok: [droplet] => (item=curl)
+2023-09-04 18:54:17,143 p=2061912 u=amin n=ansible | ok: [droplet] => (item=unzip)
+2023-09-04 18:54:20,490 p=2061912 u=amin n=ansible | ok: [droplet] => (item=sqlite3)
+2023-09-04 18:54:23,854 p=2061912 u=amin n=ansible | ok: [droplet] => (item=fail2ban)
+2023-09-04 18:54:23,860 p=2061912 u=amin n=ansible | TASK [vpn : Download hiddify] *******************************************************
+2023-09-04 18:54:26,744 p=2061912 u=amin n=ansible | ok: [droplet]
+2023-09-04 18:54:26,747 p=2061912 u=amin n=ansible | TASK [vpn : Create hiddify-config directory] ****************************************
+2023-09-04 18:54:28,954 p=2061912 u=amin n=ansible | ok: [droplet]
+2023-09-04 18:54:28,959 p=2061912 u=amin n=ansible | TASK [vpn : Unzip hiddify] **********************************************************
+2023-09-04 18:54:33,302 p=2061912 u=amin n=ansible | changed: [droplet]
+2023-09-04 18:54:33,322 p=2061912 u=amin n=ansible | PLAY RECAP **************************************************************************
+2023-09-04 18:54:33,322 p=2061912 u=amin n=ansible | droplet                    : ok=6    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-09-04 19:07:42,385 p=2111384 u=amin n=ansible | PLAY [Installing VPN on the droplet] ************************************************
+2023-09-04 19:07:42,390 p=2111384 u=amin n=ansible | TASK [Gathering Facts] **************************************************************
+2023-09-04 19:07:47,717 p=2111384 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:07:47,727 p=2111384 u=amin n=ansible | TASK [vpn : Add haproxy repository] *************************************************
+2023-09-04 19:07:50,132 p=2111384 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:07:50,135 p=2111384 u=amin n=ansible | TASK [vpn : Install required packages] **********************************************
+2023-09-04 19:07:53,361 p=2111384 u=amin n=ansible | ok: [droplet] => (item=haproxy)
+2023-09-04 19:07:56,557 p=2111384 u=amin n=ansible | ok: [droplet] => (item=software-properties-common)
+2023-09-04 19:07:59,710 p=2111384 u=amin n=ansible | ok: [droplet] => (item=curl)
+2023-09-04 19:08:03,296 p=2111384 u=amin n=ansible | ok: [droplet] => (item=unzip)
+2023-09-04 19:08:06,384 p=2111384 u=amin n=ansible | ok: [droplet] => (item=sqlite3)
+2023-09-04 19:08:09,477 p=2111384 u=amin n=ansible | ok: [droplet] => (item=fail2ban)
+2023-09-04 19:08:09,482 p=2111384 u=amin n=ansible | TASK [vpn : Download hiddify] *******************************************************
+2023-09-04 19:08:12,339 p=2111384 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:08:12,343 p=2111384 u=amin n=ansible | TASK [vpn : Create hiddify-config directory] ****************************************
+2023-09-04 19:08:14,599 p=2111384 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:08:14,603 p=2111384 u=amin n=ansible | TASK [vpn : Unzip hiddify] **********************************************************
+2023-09-04 19:08:18,686 p=2111384 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:08:18,691 p=2111384 u=amin n=ansible | TASK [vpn : Remove hiddify-config.zip file] *****************************************
+2023-09-04 19:08:20,632 p=2111384 u=amin n=ansible | changed: [droplet]
+2023-09-04 19:08:20,645 p=2111384 u=amin n=ansible | TASK [vpn : Copy installation log file to local machine] ****************************
+2023-09-04 19:08:22,640 p=2111384 u=amin n=ansible | changed: [droplet]
+2023-09-04 19:08:22,653 p=2111384 u=amin n=ansible | PLAY RECAP **************************************************************************
+2023-09-04 19:08:22,653 p=2111384 u=amin n=ansible | droplet                    : ok=8    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-09-04 19:08:59,950 p=2116355 u=amin n=ansible | PLAY [Installing VPN on the droplet] ************************************************
+2023-09-04 19:08:59,955 p=2116355 u=amin n=ansible | TASK [Gathering Facts] **************************************************************
+2023-09-04 19:09:03,852 p=2116355 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:09:03,864 p=2116355 u=amin n=ansible | TASK [vpn : Add haproxy repository] *************************************************
+2023-09-04 19:09:06,399 p=2116355 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:09:06,403 p=2116355 u=amin n=ansible | TASK [vpn : Install required packages] **********************************************
+2023-09-04 19:09:09,542 p=2116355 u=amin n=ansible | ok: [droplet] => (item=haproxy)
+2023-09-04 19:09:12,934 p=2116355 u=amin n=ansible | ok: [droplet] => (item=software-properties-common)
+2023-09-04 19:09:16,093 p=2116355 u=amin n=ansible | ok: [droplet] => (item=curl)
+2023-09-04 19:09:19,150 p=2116355 u=amin n=ansible | ok: [droplet] => (item=unzip)
+2023-09-04 19:09:22,389 p=2116355 u=amin n=ansible | ok: [droplet] => (item=sqlite3)
+2023-09-04 19:09:25,643 p=2116355 u=amin n=ansible | ok: [droplet] => (item=fail2ban)
+2023-09-04 19:09:25,649 p=2116355 u=amin n=ansible | TASK [vpn : Download hiddify] *******************************************************
+2023-09-04 19:09:28,379 p=2116355 u=amin n=ansible | changed: [droplet]
+2023-09-04 19:09:28,384 p=2116355 u=amin n=ansible | TASK [vpn : Create hiddify-config directory] ****************************************
+2023-09-04 19:09:30,518 p=2116355 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:09:30,522 p=2116355 u=amin n=ansible | TASK [vpn : Unzip hiddify] **********************************************************
+2023-09-04 19:09:34,588 p=2116355 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:09:34,593 p=2116355 u=amin n=ansible | TASK [vpn : Remove hiddify-config.zip file] *****************************************
+2023-09-04 19:09:36,530 p=2116355 u=amin n=ansible | changed: [droplet]
+2023-09-04 19:09:36,535 p=2116355 u=amin n=ansible | TASK [vpn : Run the hiddify install script] *****************************************
+2023-09-04 19:09:38,589 p=2116355 u=amin n=ansible | fatal: [droplet]: FAILED! => {"changed": true, "cmd": "install.sh > /tmp/install_log", "delta": "0:00:00.005119", "end": "2023-09-04 23:09:38.312492", "msg": "non-zero return code", "rc": 127, "start": "2023-09-04 23:09:38.307373", "stderr": "/bin/sh: 1: install.sh: not found", "stderr_lines": ["/bin/sh: 1: install.sh: not found"], "stdout": "", "stdout_lines": []}
+2023-09-04 19:09:38,590 p=2116355 u=amin n=ansible | PLAY RECAP **************************************************************************
+2023-09-04 19:09:38,590 p=2116355 u=amin n=ansible | droplet                    : ok=7    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-09-04 19:12:03,619 p=2127667 u=amin n=ansible | PLAY [Installing VPN on the droplet] ************************************************
+2023-09-04 19:12:03,625 p=2127667 u=amin n=ansible | TASK [Gathering Facts] **************************************************************
+2023-09-04 19:12:08,867 p=2127667 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:12:08,874 p=2127667 u=amin n=ansible | TASK [vpn : Add haproxy repository] *************************************************
+2023-09-04 19:12:11,270 p=2127667 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:12:11,273 p=2127667 u=amin n=ansible | TASK [vpn : Install required packages] **********************************************
+2023-09-04 19:12:14,527 p=2127667 u=amin n=ansible | ok: [droplet] => (item=haproxy)
+2023-09-04 19:12:17,683 p=2127667 u=amin n=ansible | ok: [droplet] => (item=software-properties-common)
+2023-09-04 19:12:20,835 p=2127667 u=amin n=ansible | ok: [droplet] => (item=curl)
+2023-09-04 19:12:24,116 p=2127667 u=amin n=ansible | ok: [droplet] => (item=unzip)
+2023-09-04 19:12:27,337 p=2127667 u=amin n=ansible | ok: [droplet] => (item=sqlite3)
+2023-09-04 19:12:30,673 p=2127667 u=amin n=ansible | ok: [droplet] => (item=fail2ban)
+2023-09-04 19:12:30,677 p=2127667 u=amin n=ansible | TASK [vpn : Download hiddify] *******************************************************
+2023-09-04 19:12:33,786 p=2127667 u=amin n=ansible | changed: [droplet]
+2023-09-04 19:12:33,789 p=2127667 u=amin n=ansible | TASK [vpn : Create hiddify-config directory] ****************************************
+2023-09-04 19:12:36,068 p=2127667 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:12:36,072 p=2127667 u=amin n=ansible | TASK [vpn : Unzip hiddify] **********************************************************
+2023-09-04 19:12:40,165 p=2127667 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:12:40,170 p=2127667 u=amin n=ansible | TASK [vpn : Run the hiddify install script] *****************************************
+2023-09-04 19:12:42,251 p=2127667 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:12:42,256 p=2127667 u=amin n=ansible | TASK [vpn : Copy installation log file to local machine] ****************************
+2023-09-04 19:12:44,391 p=2127667 u=amin n=ansible | changed: [droplet]
+2023-09-04 19:12:44,407 p=2127667 u=amin n=ansible | PLAY RECAP **************************************************************************
+2023-09-04 19:12:44,407 p=2127667 u=amin n=ansible | droplet                    : ok=8    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-09-04 19:14:16,941 p=2136091 u=amin n=ansible | PLAY [Installing VPN on the droplet] ************************************************
+2023-09-04 19:14:16,947 p=2136091 u=amin n=ansible | TASK [Gathering Facts] **************************************************************
+2023-09-04 19:14:22,557 p=2136091 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:14:22,566 p=2136091 u=amin n=ansible | TASK [vpn : Add haproxy repository] *************************************************
+2023-09-04 19:14:25,022 p=2136091 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:14:25,025 p=2136091 u=amin n=ansible | TASK [vpn : Install required packages] **********************************************
+2023-09-04 19:14:27,861 p=2136091 u=amin n=ansible | ok: [droplet] => (item=haproxy)
+2023-09-04 19:14:30,737 p=2136091 u=amin n=ansible | ok: [droplet] => (item=software-properties-common)
+2023-09-04 19:14:33,616 p=2136091 u=amin n=ansible | ok: [droplet] => (item=curl)
+2023-09-04 19:14:36,420 p=2136091 u=amin n=ansible | ok: [droplet] => (item=unzip)
+2023-09-04 19:14:39,221 p=2136091 u=amin n=ansible | ok: [droplet] => (item=sqlite3)
+2023-09-04 19:14:42,009 p=2136091 u=amin n=ansible | ok: [droplet] => (item=fail2ban)
+2023-09-04 19:14:42,014 p=2136091 u=amin n=ansible | TASK [vpn : Download hiddify] *******************************************************
+2023-09-04 19:14:44,866 p=2136091 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:14:44,870 p=2136091 u=amin n=ansible | TASK [vpn : Create hiddify-config directory] ****************************************
+2023-09-04 19:14:47,064 p=2136091 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:14:47,068 p=2136091 u=amin n=ansible | TASK [vpn : Unzip hiddify] **********************************************************
+2023-09-04 19:14:51,214 p=2136091 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:14:51,218 p=2136091 u=amin n=ansible | TASK [vpn : Run the hiddify install script] *****************************************
+2023-09-04 19:14:53,361 p=2136091 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:14:53,366 p=2136091 u=amin n=ansible | TASK [vpn : Copy installation log file to local machine] ****************************
+2023-09-04 19:14:53,374 p=2136091 u=amin n=ansible | skipping: [droplet]
+2023-09-04 19:14:53,387 p=2136091 u=amin n=ansible | PLAY RECAP **************************************************************************
+2023-09-04 19:14:53,387 p=2136091 u=amin n=ansible | droplet                    : ok=7    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2023-09-04 19:16:12,893 p=2143282 u=amin n=ansible | PLAY [Installing VPN on the droplet] ************************************************
+2023-09-04 19:16:12,898 p=2143282 u=amin n=ansible | TASK [Gathering Facts] **************************************************************
+2023-09-04 19:16:18,316 p=2143282 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:16:18,326 p=2143282 u=amin n=ansible | TASK [vpn : Add haproxy repository] *************************************************
+2023-09-04 19:16:20,728 p=2143282 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:16:20,732 p=2143282 u=amin n=ansible | TASK [vpn : Install required packages] **********************************************
+2023-09-04 19:16:23,894 p=2143282 u=amin n=ansible | ok: [droplet] => (item=haproxy)
+2023-09-04 19:16:27,041 p=2143282 u=amin n=ansible | ok: [droplet] => (item=software-properties-common)
+2023-09-04 19:16:30,239 p=2143282 u=amin n=ansible | ok: [droplet] => (item=curl)
+2023-09-04 19:16:33,378 p=2143282 u=amin n=ansible | ok: [droplet] => (item=unzip)
+2023-09-04 19:16:36,597 p=2143282 u=amin n=ansible | ok: [droplet] => (item=sqlite3)
+2023-09-04 19:16:39,764 p=2143282 u=amin n=ansible | ok: [droplet] => (item=fail2ban)
+2023-09-04 19:16:39,769 p=2143282 u=amin n=ansible | TASK [vpn : Download hiddify] *******************************************************
+2023-09-04 19:16:42,732 p=2143282 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:16:42,738 p=2143282 u=amin n=ansible | TASK [vpn : Create hiddify-config directory] ****************************************
+2023-09-04 19:16:45,069 p=2143282 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:16:45,076 p=2143282 u=amin n=ansible | TASK [vpn : Unzip hiddify] **********************************************************
+2023-09-04 19:16:49,215 p=2143282 u=amin n=ansible | ok: [droplet]
+2023-09-04 19:16:49,220 p=2143282 u=amin n=ansible | TASK [vpn : Run the hiddify install script] *****************************************
+2023-09-04 19:32:42,634 p=2143282 u=amin n=ansible | changed: [droplet]
+2023-09-04 19:32:42,639 p=2143282 u=amin n=ansible | TASK [vpn : Copy installation log file to local machine] ****************************
+2023-09-04 19:32:45,271 p=2143282 u=amin n=ansible | changed: [droplet]
+2023-09-04 19:32:45,290 p=2143282 u=amin n=ansible | PLAY RECAP **************************************************************************
+2023-09-04 19:32:45,290 p=2143282 u=amin n=ansible | droplet                    : ok=8    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

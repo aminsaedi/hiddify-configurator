@@ -1,0 +1,7 @@
+---
+
+- name: Installing VPN on the droplet
+  hosts: all
+  become: yes
+  roles:
+    - vpn

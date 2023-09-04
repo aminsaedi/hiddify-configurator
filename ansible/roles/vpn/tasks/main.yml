@@ -1,0 +1,45 @@
+---
+
+- name: Add haproxy repository
+  apt_repository:
+    repo: ppa:vbernat/haproxy-2.8
+    state: present
+
+- name: Install required packages
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ REQUIRED_PACKAGES }}"
+
+
+- name: Download hiddify
+  get_url:
+    url: "https://github.com/hiddify/hiddify-config/releases/latest/download/hiddify-config.zip"
+    dest: /opt
+
+- name: Create hiddify-config directory
+  file:
+    path: /opt/hiddify-config
+    state: directory
+
+- name: Unzip hiddify
+  unarchive:
+    src: /opt/hiddify-config.zip
+    dest: /opt/hiddify-config
+    remote_src: yes
+
+# - name: Remove hiddify-config.zip file
+#   file:
+#     path: /opt/hiddify-config.zip
+#     state: absent
+
+- name: Run the hiddify install script
+  shell: /opt/hiddify-config/install.sh > /tmp/install_log
+  # args:
+  #   chdir: /opt/hiddify-config/
+  #   creates: /tmp/install_log
+
+- name: Copy installation log file to local machine
+  fetch:
+    src: /tmp/install_log
+    dest: /tmp/fetched

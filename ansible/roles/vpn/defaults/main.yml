@@ -1,0 +1,7 @@
+REQUIRED_PACKAGES:
+  - haproxy
+  - software-properties-common
+  - curl
+  - unzip
+  - sqlite3
+  - fail2ban
