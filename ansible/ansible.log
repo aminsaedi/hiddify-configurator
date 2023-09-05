@@ -1291,3 +1291,116 @@ The offending line appears to be:
 2023-09-04 21:16:57,965 p=2573080 u=amin n=ansible | fatal: [droplet]: FAILED! => {"changed": true, "cmd": "python3 /tmp/set-fqdn.py direct-nyc1.aminsaedi.bio", "delta": "0:00:00.465354", "end": "2023-09-05 01:16:57.912418", "msg": "non-zero return code", "rc": 1, "start": "2023-09-05 01:16:57.447064", "stderr": "/usr/lib/python3/dist-packages/requests/__init__.py:89: RequestsDependencyWarning: urllib3 (2.0.4) or chardet (3.0.4) doesn't match a supported version!\n  warnings.warn(\"urllib3 ({}) or chardet ({}) doesn't match a supported \"\nTraceback (most recent call last):\n  File \"/tmp/set-fqdn.py\", line 17, in <module>\n    temp_url = p.findall(text)[0] + \"quick-setup\"\nIndexError: list index out of range", "stderr_lines": ["/usr/lib/python3/dist-packages/requests/__init__.py:89: RequestsDependencyWarning: urllib3 (2.0.4) or chardet (3.0.4) doesn't match a supported version!", "  warnings.warn(\"urllib3 ({}) or chardet ({}) doesn't match a supported \"", "Traceback (most recent call last):", "  File \"/tmp/set-fqdn.py\", line 17, in <module>", "    temp_url = p.findall(text)[0] + \"quick-setup\"", "IndexError: list index out of range"], "stdout": "", "stdout_lines": []}
 2023-09-04 21:16:57,966 p=2573080 u=amin n=ansible | PLAY RECAP **************************************************************************
 2023-09-04 21:16:57,966 p=2573080 u=amin n=ansible | droplet                    : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-09-05 09:32:46,206 p=172715 u=amin n=ansible | ERROR! conflicting action statements: stat, shell
+
+The error appears to be in '/home/amin/w/hiddyfy-terraform/ansible/roles/vpn/tasks/main.yml': line 31, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Run the hiddify install script
+  ^ here
+
+2023-09-05 09:37:05,653 p=202950 u=amin n=ansible | PLAY [Installing VPN on the droplet] *******************************************
+2023-09-05 09:37:05,660 p=202950 u=amin n=ansible | TASK [Gathering Facts] *********************************************************
+2023-09-05 09:37:08,528 p=202950 u=amin n=ansible | ok: [droplet]
+2023-09-05 09:37:08,540 p=202950 u=amin n=ansible | TASK [vpn : Add haproxy repository] ********************************************
+2023-09-05 09:37:24,819 p=202950 u=amin n=ansible | changed: [droplet]
+2023-09-05 09:37:24,822 p=202950 u=amin n=ansible | TASK [vpn : Install required packages] *****************************************
+2023-09-05 09:37:39,103 p=202950 u=amin n=ansible | changed: [droplet] => (item=haproxy)
+2023-09-05 09:37:40,811 p=202950 u=amin n=ansible | ok: [droplet] => (item=software-properties-common)
+2023-09-05 09:37:42,216 p=202950 u=amin n=ansible | ok: [droplet] => (item=curl)
+2023-09-05 09:37:53,095 p=202950 u=amin n=ansible | changed: [droplet] => (item=unzip)
+2023-09-05 09:38:02,867 p=202950 u=amin n=ansible | changed: [droplet] => (item=sqlite3)
+2023-09-05 09:38:15,536 p=202950 u=amin n=ansible | changed: [droplet] => (item=fail2ban)
+2023-09-05 09:38:15,541 p=202950 u=amin n=ansible | TASK [vpn : Download hiddify] **************************************************
+2023-09-05 09:38:16,588 p=202950 u=amin n=ansible | changed: [droplet]
+2023-09-05 09:38:16,592 p=202950 u=amin n=ansible | TASK [vpn : Create hiddify-config directory] ***********************************
+2023-09-05 09:38:17,188 p=202950 u=amin n=ansible | changed: [droplet]
+2023-09-05 09:38:17,200 p=202950 u=amin n=ansible | TASK [vpn : Unzip hiddify] *****************************************************
+2023-09-05 09:38:18,480 p=202950 u=amin n=ansible | changed: [droplet]
+2023-09-05 09:38:18,485 p=202950 u=amin n=ansible | TASK [vpn : Check if hiddify is already installed] *****************************
+2023-09-05 09:38:18,970 p=202950 u=amin n=ansible | ok: [droplet]
+2023-09-05 09:38:18,981 p=202950 u=amin n=ansible | TASK [vpn : Run the hiddify install script] ************************************
+2023-09-05 09:38:18,990 p=202950 u=amin n=ansible | fatal: [droplet]: FAILED! => {"msg": "The conditional check 'file_status.exists' failed. The error was: error while evaluating conditional (file_status.exists): 'dict object' has no attribute 'exists'. 'dict object' has no attribute 'exists'\n\nThe error appears to be in '/home/amin/w/hiddyfy-terraform/ansible/roles/vpn/tasks/main.yml': line 36, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: Run the hiddify install script\n  ^ here\n"}
+2023-09-05 09:38:18,991 p=202950 u=amin n=ansible | PLAY RECAP *********************************************************************
+2023-09-05 09:38:18,991 p=202950 u=amin n=ansible | droplet                    : ok=7    changed=5    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-09-05 09:40:00,457 p=224688 u=amin n=ansible | PLAY [Installing VPN on the droplet] *******************************************
+2023-09-05 09:40:00,461 p=224688 u=amin n=ansible | TASK [Gathering Facts] *********************************************************
+2023-09-05 09:40:04,521 p=224688 u=amin n=ansible | ok: [droplet]
+2023-09-05 09:40:04,532 p=224688 u=amin n=ansible | TASK [vpn : Add haproxy repository] ********************************************
+2023-09-05 09:40:05,505 p=224688 u=amin n=ansible | ok: [droplet]
+2023-09-05 09:40:05,509 p=224688 u=amin n=ansible | TASK [vpn : Install required packages] *****************************************
+2023-09-05 09:40:07,687 p=224688 u=amin n=ansible | ok: [droplet] => (item=haproxy)
+2023-09-05 09:40:09,581 p=224688 u=amin n=ansible | ok: [droplet] => (item=software-properties-common)
+2023-09-05 09:40:11,516 p=224688 u=amin n=ansible | ok: [droplet] => (item=curl)
+2023-09-05 09:40:13,419 p=224688 u=amin n=ansible | ok: [droplet] => (item=unzip)
+2023-09-05 09:40:15,193 p=224688 u=amin n=ansible | ok: [droplet] => (item=sqlite3)
+2023-09-05 09:40:16,961 p=224688 u=amin n=ansible | ok: [droplet] => (item=fail2ban)
+2023-09-05 09:40:16,965 p=224688 u=amin n=ansible | TASK [vpn : Download hiddify] **************************************************
+2023-09-05 09:40:19,095 p=224688 u=amin n=ansible | ok: [droplet]
+2023-09-05 09:40:19,098 p=224688 u=amin n=ansible | TASK [vpn : Create hiddify-config directory] ***********************************
+2023-09-05 09:40:19,760 p=224688 u=amin n=ansible | ok: [droplet]
+2023-09-05 09:40:19,763 p=224688 u=amin n=ansible | TASK [vpn : Unzip hiddify] *****************************************************
+2023-09-05 09:40:21,173 p=224688 u=amin n=ansible | ok: [droplet]
+2023-09-05 09:40:21,176 p=224688 u=amin n=ansible | TASK [vpn : Check if hiddify is already installed] *****************************
+2023-09-05 09:40:21,737 p=224688 u=amin n=ansible | ok: [droplet]
+2023-09-05 09:40:21,740 p=224688 u=amin n=ansible | TASK [vpn : Run the hiddify install script] ************************************
+2023-09-05 09:40:21,747 p=224688 u=amin n=ansible | skipping: [droplet]
+2023-09-05 09:40:21,758 p=224688 u=amin n=ansible | TASK [vpn : Cpy admin panel link(s) to the local machine] **********************
+2023-09-05 09:40:22,403 p=224688 u=amin n=ansible | fatal: [droplet]: FAILED! => {"changed": false, "msg": "the remote file does not exist, not transferring, ignored"}
+2023-09-05 09:40:22,404 p=224688 u=amin n=ansible | PLAY RECAP *********************************************************************
+2023-09-05 09:40:22,404 p=224688 u=amin n=ansible | droplet                    : ok=7    changed=0    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2023-09-05 09:40:42,404 p=229957 u=amin n=ansible | PLAY [Installing VPN on the droplet] *******************************************
+2023-09-05 09:40:42,408 p=229957 u=amin n=ansible | TASK [Gathering Facts] *********************************************************
+2023-09-05 09:40:44,195 p=229957 u=amin n=ansible | ok: [droplet]
+2023-09-05 09:40:44,203 p=229957 u=amin n=ansible | TASK [vpn : Add haproxy repository] ********************************************
+2023-09-05 09:40:45,105 p=229957 u=amin n=ansible | ok: [droplet]
+2023-09-05 09:40:45,110 p=229957 u=amin n=ansible | TASK [vpn : Install required packages] *****************************************
+2023-09-05 09:40:46,815 p=229957 u=amin n=ansible | ok: [droplet] => (item=haproxy)
+2023-09-05 09:40:48,576 p=229957 u=amin n=ansible | ok: [droplet] => (item=software-properties-common)
+2023-09-05 09:40:50,267 p=229957 u=amin n=ansible | ok: [droplet] => (item=curl)
+2023-09-05 09:40:51,963 p=229957 u=amin n=ansible | ok: [droplet] => (item=unzip)
+2023-09-05 09:40:53,689 p=229957 u=amin n=ansible | ok: [droplet] => (item=sqlite3)
+2023-09-05 09:40:55,424 p=229957 u=amin n=ansible | ok: [droplet] => (item=fail2ban)
+2023-09-05 09:40:55,429 p=229957 u=amin n=ansible | TASK [vpn : Download hiddify] **************************************************
+2023-09-05 09:40:56,405 p=229957 u=amin n=ansible | ok: [droplet]
+2023-09-05 09:40:56,409 p=229957 u=amin n=ansible | TASK [vpn : Create hiddify-config directory] ***********************************
+2023-09-05 09:40:57,009 p=229957 u=amin n=ansible | ok: [droplet]
+2023-09-05 09:40:57,013 p=229957 u=amin n=ansible | TASK [vpn : Unzip hiddify] *****************************************************
+2023-09-05 09:40:58,405 p=229957 u=amin n=ansible | ok: [droplet]
+2023-09-05 09:40:58,410 p=229957 u=amin n=ansible | TASK [vpn : Check if hiddify is already installed] *****************************
+2023-09-05 09:40:58,977 p=229957 u=amin n=ansible | ok: [droplet]
+2023-09-05 09:40:58,983 p=229957 u=amin n=ansible | TASK [vpn : Run the hiddify install script] ************************************
+2023-09-05 09:56:41,838 p=229957 u=amin n=ansible | changed: [droplet]
+2023-09-05 09:56:41,842 p=229957 u=amin n=ansible | TASK [vpn : Cpy admin panel link(s) to the local machine] **********************
+2023-09-05 09:56:42,577 p=229957 u=amin n=ansible | changed: [droplet]
+2023-09-05 09:56:42,592 p=229957 u=amin n=ansible | PLAY RECAP *********************************************************************
+2023-09-05 09:56:42,592 p=229957 u=amin n=ansible | droplet                    : ok=9    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-09-05 10:15:23,166 p=470311 u=amin n=ansible | PLAY [Installing VPN on the droplet] *******************************************
+2023-09-05 10:15:23,171 p=470311 u=amin n=ansible | TASK [Gathering Facts] *********************************************************
+2023-09-05 10:15:27,190 p=470311 u=amin n=ansible | ok: [droplet]
+2023-09-05 10:15:27,203 p=470311 u=amin n=ansible | TASK [vpn : Add haproxy repository] ********************************************
+2023-09-05 10:15:28,315 p=470311 u=amin n=ansible | ok: [droplet]
+2023-09-05 10:15:28,319 p=470311 u=amin n=ansible | TASK [vpn : Install required packages] *****************************************
+2023-09-05 10:15:31,561 p=470311 u=amin n=ansible | ok: [droplet] => (item=haproxy)
+2023-09-05 10:15:34,848 p=470311 u=amin n=ansible | ok: [droplet] => (item=software-properties-common)
+2023-09-05 10:15:37,501 p=470311 u=amin n=ansible | ok: [droplet] => (item=curl)
+2023-09-05 10:15:40,153 p=470311 u=amin n=ansible | ok: [droplet] => (item=unzip)
+2023-09-05 10:15:42,940 p=470311 u=amin n=ansible | ok: [droplet] => (item=sqlite3)
+2023-09-05 10:15:45,706 p=470311 u=amin n=ansible | ok: [droplet] => (item=fail2ban)
+2023-09-05 10:15:45,711 p=470311 u=amin n=ansible | TASK [vpn : Download hiddify] **************************************************
+2023-09-05 10:15:47,278 p=470311 u=amin n=ansible | ok: [droplet]
+2023-09-05 10:15:47,283 p=470311 u=amin n=ansible | TASK [vpn : Create hiddify-config directory] ***********************************
+2023-09-05 10:15:47,994 p=470311 u=amin n=ansible | ok: [droplet]
+2023-09-05 10:15:47,999 p=470311 u=amin n=ansible | TASK [vpn : Unzip hiddify] *****************************************************
+2023-09-05 10:15:49,806 p=470311 u=amin n=ansible | changed: [droplet]
+2023-09-05 10:15:49,809 p=470311 u=amin n=ansible | TASK [vpn : Check if hiddify is already installed] *****************************
+2023-09-05 10:15:50,483 p=470311 u=amin n=ansible | ok: [droplet]
+2023-09-05 10:15:50,486 p=470311 u=amin n=ansible | TASK [vpn : Run the hiddify install script] ************************************
+2023-09-05 10:15:50,496 p=470311 u=amin n=ansible | skipping: [droplet]
+2023-09-05 10:15:50,501 p=470311 u=amin n=ansible | TASK [vpn : Cpy admin panel link(s) to the local machine] **********************
+2023-09-05 10:15:51,186 p=470311 u=amin n=ansible | changed: [droplet]
+2023-09-05 10:15:51,200 p=470311 u=amin n=ansible | PLAY RECAP *********************************************************************
+2023-09-05 10:15:51,201 p=470311 u=amin n=ansible | droplet                    : ok=8    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   

@@ -6,7 +6,9 @@ terraform apply -auto-approve
 FQDN=$(terraform output -raw direct-fqdn)
 
 cd ./ansible
-ansible-playbook playbooks/main.yml -e "fqdn=$FQDN" --tags panel
+ansible-playbook playbooks/main.yml -e "fqdn=$FQDN" 
+
+cat /tmp/link
 
 # connect to server and run the following commands
 

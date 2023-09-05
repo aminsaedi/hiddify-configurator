@@ -22,33 +22,24 @@
     path: /opt/hiddify-config
     state: directory
 
+- name: Check if hiddify is already installed
+  stat:
+    path: /opt/hiddify-config/use-link
+  register: file_status
+
 - name: Unzip hiddify
   unarchive:
     src: /opt/hiddify-config.zip
     dest: /opt/hiddify-config
     remote_src: yes
+  when: not file_status.stat.exists
 
 - name: Run the hiddify install script
-  shell: /opt/hiddify-config/install.sh > /tmp/install_log
+  shell: /opt/hiddify-config/install.sh
+  when: not file_status.stat.exists
 
-
-- name: Copy set-fqdn script to remote machine
-  copy:
-    src: tmp/set-fqdn.py
-    dest: /tmp/set-fqdn.py
-    owner: root
-  tags:
-    - panel
-
-
-- name: Install python selenium package
-  pip:
-    name: selenium
-  tags:
-    - panel
-
-
-- name: Run the script to set the panel fqdn
-  shell: "python3 /tmp/set-fqdn.py {{ fqdn }}"
-  tags:
-    - panel
+- name: Cpy admin panel link(s) to the local machine
+  fetch:
+    src: /opt/hiddify-config/use-link
+    dest: /tmp/link
+    flat: yes
