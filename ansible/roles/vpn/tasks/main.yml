@@ -28,16 +28,9 @@
     dest: /opt/hiddify-config
     remote_src: yes
 
-# - name: Remove hiddify-config.zip file
-#   file:
-#     path: /opt/hiddify-config.zip
-#     state: absent
 
 - name: Run the hiddify install script
   shell: /opt/hiddify-config/install.sh > /tmp/install_log
-  # args:
-  #   chdir: /opt/hiddify-config/
-  #   creates: /tmp/install_log
 
 - name: Copy installation log file to local machine
   fetch:
