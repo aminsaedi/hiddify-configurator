@@ -28,11 +28,27 @@
     dest: /opt/hiddify-config
     remote_src: yes
 
-
 - name: Run the hiddify install script
   shell: /opt/hiddify-config/install.sh > /tmp/install_log
 
-- name: Copy installation log file to local machine
-  fetch:
-    src: /tmp/install_log
-    dest: /tmp/fetched
+
+- name: Copy set-fqdn script to remote machine
+  copy:
+    src: tmp/set-fqdn.py
+    dest: /tmp/set-fqdn.py
+    owner: root
+  tags:
+    - panel
+
+
+- name: Install python selenium package
+  pip:
+    name: selenium
+  tags:
+    - panel
+
+
+- name: Run the script to set the panel fqdn
+  shell: "python3 /tmp/set-fqdn.py {{ fqdn }}"
+  tags:
+    - panel

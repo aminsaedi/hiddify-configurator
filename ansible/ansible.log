@@ -1228,3 +1228,66 @@ The offending line appears to be:
 2023-09-04 19:32:45,271 p=2143282 u=amin n=ansible | changed: [droplet]
 2023-09-04 19:32:45,290 p=2143282 u=amin n=ansible | PLAY RECAP **************************************************************************
 2023-09-04 19:32:45,290 p=2143282 u=amin n=ansible | droplet                    : ok=8    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-09-04 20:56:11,240 p=2502211 u=amin n=ansible | PLAY [Installing VPN on the droplet] ************************************************
+2023-09-04 20:56:11,247 p=2502211 u=amin n=ansible | TASK [Gathering Facts] **************************************************************
+2023-09-04 20:56:14,920 p=2502211 u=amin n=ansible | ok: [droplet]
+2023-09-04 20:56:14,929 p=2502211 u=amin n=ansible | TASK [vpn : Add haproxy repository] *************************************************
+2023-09-04 20:56:53,792 p=2502211 u=amin n=ansible | changed: [droplet]
+2023-09-04 20:56:53,797 p=2502211 u=amin n=ansible | TASK [vpn : Install required packages] **********************************************
+2023-09-04 20:57:15,111 p=2502211 u=amin n=ansible | changed: [droplet] => (item=haproxy)
+2023-09-04 20:57:16,963 p=2502211 u=amin n=ansible | ok: [droplet] => (item=software-properties-common)
+2023-09-04 20:57:18,590 p=2502211 u=amin n=ansible | ok: [droplet] => (item=curl)
+2023-09-04 20:57:30,972 p=2502211 u=amin n=ansible | changed: [droplet] => (item=unzip)
+2023-09-04 20:57:42,047 p=2502211 u=amin n=ansible | changed: [droplet] => (item=sqlite3)
+2023-09-04 20:58:00,988 p=2502211 u=amin n=ansible | changed: [droplet] => (item=fail2ban)
+2023-09-04 20:58:00,993 p=2502211 u=amin n=ansible | TASK [vpn : Download hiddify] *******************************************************
+2023-09-04 20:58:02,731 p=2502211 u=amin n=ansible | changed: [droplet]
+2023-09-04 20:58:02,736 p=2502211 u=amin n=ansible | TASK [vpn : Create hiddify-config directory] ****************************************
+2023-09-04 20:58:03,836 p=2502211 u=amin n=ansible | changed: [droplet]
+2023-09-04 20:58:03,841 p=2502211 u=amin n=ansible | TASK [vpn : Unzip hiddify] **********************************************************
+2023-09-04 20:58:06,396 p=2502211 u=amin n=ansible | changed: [droplet]
+2023-09-04 20:58:06,401 p=2502211 u=amin n=ansible | TASK [vpn : Run the hiddify install script] *****************************************
+2023-09-04 21:03:27,378 p=2502211 u=amin n=ansible | changed: [droplet]
+2023-09-04 21:03:27,383 p=2502211 u=amin n=ansible | TASK [vpn : Copy set-fqdn script to remote machine] *********************************
+2023-09-04 21:03:28,205 p=2502211 u=amin n=ansible | fatal: [droplet]: FAILED! => {"changed": false, "msg": "src option requires state to be 'link' or 'hard'", "path": "/tmp/set-fqdn.py"}
+2023-09-04 21:03:28,206 p=2502211 u=amin n=ansible | PLAY RECAP **************************************************************************
+2023-09-04 21:03:28,207 p=2502211 u=amin n=ansible | droplet                    : ok=7    changed=6    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-09-04 21:10:54,193 p=2552162 u=amin n=ansible | PLAY [Installing VPN on the droplet] ************************************************
+2023-09-04 21:10:54,198 p=2552162 u=amin n=ansible | TASK [Gathering Facts] **************************************************************
+2023-09-04 21:10:57,247 p=2552162 u=amin n=ansible | ok: [droplet]
+2023-09-04 21:10:57,259 p=2552162 u=amin n=ansible | TASK [vpn : Copy set-fqdn script to remote machine] *********************************
+2023-09-04 21:10:58,623 p=2552162 u=amin n=ansible | changed: [droplet]
+2023-09-04 21:10:58,628 p=2552162 u=amin n=ansible | TASK [vpn : Run the script to set the panel fqdn] ***********************************
+2023-09-04 21:10:59,625 p=2552162 u=amin n=ansible | fatal: [droplet]: FAILED! => {"changed": true, "cmd": "python3 /tmp/set-fqdn.py direct-nyc1.aminsaedi.bio", "delta": "0:00:00.347507", "end": "2023-09-05 01:10:59.543086", "msg": "non-zero return code", "rc": 1, "start": "2023-09-05 01:10:59.195579", "stderr": "Traceback (most recent call last):\n  File \"/tmp/set-fqdn.py\", line 1, in <module>\n    from selenium import webdriver\nModuleNotFoundError: No module named 'selenium'", "stderr_lines": ["Traceback (most recent call last):", "  File \"/tmp/set-fqdn.py\", line 1, in <module>", "    from selenium import webdriver", "ModuleNotFoundError: No module named 'selenium'"], "stdout": "", "stdout_lines": []}
+2023-09-04 21:10:59,626 p=2552162 u=amin n=ansible | PLAY RECAP **************************************************************************
+2023-09-04 21:10:59,626 p=2552162 u=amin n=ansible | droplet                    : ok=2    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-09-04 21:13:04,855 p=2559781 u=amin n=ansible | PLAY [Installing VPN on the droplet] ************************************************
+2023-09-04 21:13:04,860 p=2559781 u=amin n=ansible | TASK [Gathering Facts] **************************************************************
+2023-09-04 21:13:07,181 p=2559781 u=amin n=ansible | ok: [droplet]
+2023-09-04 21:13:07,189 p=2559781 u=amin n=ansible | TASK [vpn : Copy set-fqdn script to remote machine] *********************************
+2023-09-04 21:13:08,300 p=2559781 u=amin n=ansible | ok: [droplet]
+2023-09-04 21:13:08,305 p=2559781 u=amin n=ansible | TASK [vpn : Install python selenium package] ****************************************
+2023-09-04 21:13:15,642 p=2559781 u=amin n=ansible | changed: [droplet]
+2023-09-04 21:13:15,647 p=2559781 u=amin n=ansible | TASK [vpn : Run the script to set the panel fqdn] ***********************************
+2023-09-04 21:13:16,670 p=2559781 u=amin n=ansible | fatal: [droplet]: FAILED! => {"changed": true, "cmd": "python3 /tmp/set-fqdn.py direct-nyc1.aminsaedi.bio", "delta": "0:00:00.411931", "end": "2023-09-05 01:13:16.619358", "msg": "non-zero return code", "rc": 1, "start": "2023-09-05 01:13:16.207427", "stderr": "/usr/lib/python3/dist-packages/requests/__init__.py:89: RequestsDependencyWarning: urllib3 (2.0.4) or chardet (3.0.4) doesn't match a supported version!\n  warnings.warn(\"urllib3 ({}) or chardet ({}) doesn't match a supported \"\nTraceback (most recent call last):\n  File \"/tmp/set-fqdn.py\", line 13, in <module>\n    with open(\"/tmp/fetched/droplet/tmp/install_log\", \"r\") as f:\nFileNotFoundError: [Errno 2] No such file or directory: '/tmp/fetched/droplet/tmp/install_log'", "stderr_lines": ["/usr/lib/python3/dist-packages/requests/__init__.py:89: RequestsDependencyWarning: urllib3 (2.0.4) or chardet (3.0.4) doesn't match a supported version!", "  warnings.warn(\"urllib3 ({}) or chardet ({}) doesn't match a supported \"", "Traceback (most recent call last):", "  File \"/tmp/set-fqdn.py\", line 13, in <module>", "    with open(\"/tmp/fetched/droplet/tmp/install_log\", \"r\") as f:", "FileNotFoundError: [Errno 2] No such file or directory: '/tmp/fetched/droplet/tmp/install_log'"], "stdout": "", "stdout_lines": []}
+2023-09-04 21:13:16,671 p=2559781 u=amin n=ansible | PLAY RECAP **************************************************************************
+2023-09-04 21:13:16,671 p=2559781 u=amin n=ansible | droplet                    : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-09-04 21:16:22,102 p=2571254 u=amin n=ansible | PLAY [Installing VPN on the droplet] ************************************************
+2023-09-04 21:16:22,107 p=2571254 u=amin n=ansible | TASK [Gathering Facts] **************************************************************
+2023-09-04 21:16:24,978 p=2571254 u=amin n=ansible | ok: [droplet]
+2023-09-04 21:16:24,987 p=2571254 u=amin n=ansible | TASK [vpn : Copy set-fqdn script to remote machine] *********************************
+2023-09-04 21:16:25,076 p=2571254 u=amin n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2023-09-04 21:16:25,076 p=2571254 u=amin n=ansible | fatal: [droplet]: FAILED! => {"changed": false, "msg": "Could not find or access 'set-fqdn.py'\nSearched in:\n\t/home/amin/w/hiddyfy-terraform/ansible/roles/vpn/files/set-fqdn.py\n\t/home/amin/w/hiddyfy-terraform/ansible/roles/vpn/set-fqdn.py\n\t/home/amin/w/hiddyfy-terraform/ansible/roles/vpn/tasks/files/set-fqdn.py\n\t/home/amin/w/hiddyfy-terraform/ansible/roles/vpn/tasks/set-fqdn.py\n\t/home/amin/w/hiddyfy-terraform/ansible/playbooks/files/set-fqdn.py\n\t/home/amin/w/hiddyfy-terraform/ansible/playbooks/set-fqdn.py on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2023-09-04 21:16:25,077 p=2571254 u=amin n=ansible | PLAY RECAP **************************************************************************
+2023-09-04 21:16:25,077 p=2571254 u=amin n=ansible | droplet                    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-09-04 21:16:51,019 p=2573080 u=amin n=ansible | PLAY [Installing VPN on the droplet] ************************************************
+2023-09-04 21:16:51,025 p=2573080 u=amin n=ansible | TASK [Gathering Facts] **************************************************************
+2023-09-04 21:16:52,627 p=2573080 u=amin n=ansible | ok: [droplet]
+2023-09-04 21:16:52,638 p=2573080 u=amin n=ansible | TASK [vpn : Copy set-fqdn script to remote machine] *********************************
+2023-09-04 21:16:53,924 p=2573080 u=amin n=ansible | changed: [droplet]
+2023-09-04 21:16:53,927 p=2573080 u=amin n=ansible | TASK [vpn : Install python selenium package] ****************************************
+2023-09-04 21:16:56,898 p=2573080 u=amin n=ansible | ok: [droplet]
+2023-09-04 21:16:56,903 p=2573080 u=amin n=ansible | TASK [vpn : Run the script to set the panel fqdn] ***********************************
+2023-09-04 21:16:57,965 p=2573080 u=amin n=ansible | fatal: [droplet]: FAILED! => {"changed": true, "cmd": "python3 /tmp/set-fqdn.py direct-nyc1.aminsaedi.bio", "delta": "0:00:00.465354", "end": "2023-09-05 01:16:57.912418", "msg": "non-zero return code", "rc": 1, "start": "2023-09-05 01:16:57.447064", "stderr": "/usr/lib/python3/dist-packages/requests/__init__.py:89: RequestsDependencyWarning: urllib3 (2.0.4) or chardet (3.0.4) doesn't match a supported version!\n  warnings.warn(\"urllib3 ({}) or chardet ({}) doesn't match a supported \"\nTraceback (most recent call last):\n  File \"/tmp/set-fqdn.py\", line 17, in <module>\n    temp_url = p.findall(text)[0] + \"quick-setup\"\nIndexError: list index out of range", "stderr_lines": ["/usr/lib/python3/dist-packages/requests/__init__.py:89: RequestsDependencyWarning: urllib3 (2.0.4) or chardet (3.0.4) doesn't match a supported version!", "  warnings.warn(\"urllib3 ({}) or chardet ({}) doesn't match a supported \"", "Traceback (most recent call last):", "  File \"/tmp/set-fqdn.py\", line 17, in <module>", "    temp_url = p.findall(text)[0] + \"quick-setup\"", "IndexError: list index out of range"], "stdout": "", "stdout_lines": []}
+2023-09-04 21:16:57,966 p=2573080 u=amin n=ansible | PLAY RECAP **************************************************************************
+2023-09-04 21:16:57,966 p=2573080 u=amin n=ansible | droplet                    : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   

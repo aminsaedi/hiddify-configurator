@@ -10,7 +10,7 @@ if (len(sys.argv) != 2):
     print("Usage: ./set-fqdn.py fqdn")
     exit(1)
 
-with open("/tmp/fetched/droplet/tmp/install_log", "r") as f:
+with open("/tmp/install_log", "r") as f:
     text = f.read()
 
 p = re.compile("https://.*sslip.*")
