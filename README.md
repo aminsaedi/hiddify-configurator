@@ -28,7 +28,7 @@ Before using the setup script, ensure you have the following prerequisites:
 
 ## Configuration
 Before you run the script you have to update the variable files to set your api keys. The file name that you have to modify is `terraform.tfvars`. Here is a sample configuration:
-```terraform
+```
 do_token="YOUR_DIGITAL_OCEAN_API_KEY"
 pvt_key="YOUR_DIGITAL_OCEAN_PRIVATE_KEY_LOCATION"
 region="ZONE_THAT_YOU_WANT_TO_HOST_DROPLET (Default if france)"
