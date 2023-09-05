@@ -46,4 +46,4 @@ Contributions to this project are welcome! If you find any issues or have sugges
 
 ## License
 
-This project is licensed under the MIT License. Feel free to use and modify this script as per your requirements.
+This project is licensed under the  GPL-3.0 License. Feel free to use and modify this script as per your requirements.
