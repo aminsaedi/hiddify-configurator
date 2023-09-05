@@ -22,11 +22,28 @@ Before using the setup script, ensure you have the following prerequisites:
 - [Terraform ↗](https://www.terraform.io/) installed on your local machine.
 - [Ansible ↗](https://www.ansible.com/) installed on your local machine.
 - A Digital Ocean account with API credentials.
+- A Digital Ocean private key location
 - A Cloudflare account with API credentials with write access to your DNS zone
-- Your Cloudflare zone id
+- A Cloudflare zone id
 
 ## Configuration
 Before you run the script you have to update the variable files to set your api keys. The file name that you have to modify is `terraform.tfvars`. Here is a sample configuration:
 ```terraform
-
+do_token="YOUR_DIGITAL_OCEAN_API_KEY"
+pvt_key="YOUR_DIGITAL_OCEAN_PRIVATE_KEY_LOCATION"
+region="ZONE_THAT_YOU_WANT_TO_HOST_DROPLET (Default if france)"
+cloudflare_api_token="YOUR_CLOUDFLARE_API_TOKEN"
+cloudflare_zone_id="YOUR_DNS_ZONE_ID"
 ```
+## Usage
+To use the setup script, you just have to run the following command on your terminal:
+```bash
+./init.sh
+```
+## Contributing
+
+Contributions to this project are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. Feel free to use and modify this script as per your requirements.
