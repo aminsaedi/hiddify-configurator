@@ -1,2 +1,2 @@
 # TODO
-[ ] Write readme file
+[] Write readme file
