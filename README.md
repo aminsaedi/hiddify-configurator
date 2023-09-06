@@ -1,7 +1,7 @@
 # Hiddify-Configurator
 
 This repository contains a setup script for automating the deployment and configuration of the **Hiddify** application on a virtual machine using Terraform and Ansible.
-
+![Sample Run](https://github.com/aminsaedi/hiddify-configurator/blob/master/carbon.png "Sample Run")
 
 ## Table of Contents
 
